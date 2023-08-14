@@ -1,0 +1,14 @@
+django-admin startproject testProject
+
+cd testProject
+
+python manage.py startapp DeenaApp
+
+python manage.py migrate
+
+python manage.py makemigrations DeenaApp
+
+python manage.py migrate
+
+python manage.py runserver
+

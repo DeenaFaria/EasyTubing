@@ -1,0 +1,22 @@
+pip install google-api-python-client
+
+Step-by-step guide to setting up the YouTube Data API and obtaining API credentials:
+
+Create a Google Cloud Project:
+
+Go to the Google Cloud Console.
+If you don't have an account, you'll need to create one.
+Click on the project dropdown at the top left and then click on "New Project".
+Follow the prompts to create a new project. Give it a name and organization (if applicable).
+Enable the YouTube Data API:
+
+Once your project is created, click on the project name at the top left to return to the dashboard.
+In the dashboard, click on "APIs & Services" > "Library" in the left-hand navigation.
+Search for "YouTube Data API" and click on it in the results.
+Click the "Enable" button to enable the API for your project.
+Obtain API Credentials (API Key):
+
+From the "APIs & Services" menu, click on "Credentials".
+Click the "+ CREATE CREDENTIALS" button and select "API Key".
+A popup will appear with your API key. You can restrict its usage to improve security, but for now, you can leave it unrestricted.
+Copy the API key and keep it secure.

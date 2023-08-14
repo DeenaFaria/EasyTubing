@@ -1,0 +1,22 @@
+<!-- DeenaApp/templates/myapp/youtube_search.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube Channel Search</title>
+	<ul>
+	<a href="{% url 'Search_By_Year' %}">Search by year</a>
+	
+	</ul>
+</head>
+<body>
+    <h1>Search YouTube Channel</h1>
+<!-- myapp/templates/myapp/youtube_search.html -->
+<form method="get" action="{% url 'youtube_search' %}">
+    <input type="text" name="channel_name" placeholder="Enter YouTube Channel Name">
+    <input type="text" name="query" placeholder="Enter Search Query">
+    <input type="submit" value="Search">
+</form>
+
+</body>
+</html>
+

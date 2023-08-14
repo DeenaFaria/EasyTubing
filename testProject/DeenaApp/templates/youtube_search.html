@@ -1,0 +1,21 @@
+<!-- DeenaApp/templates/myapp/youtube_search.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube Channel Search</title>
+</head>
+<body>
+    
+    {% if results %}
+    <h2>Search Results</h2>
+    <ul>
+        {% for video in results %}
+            <li>
+                <a href="https://www.youtube.com/watch?v={{ video.id.videoId }}" target="_blank">{{ video.snippet.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
+

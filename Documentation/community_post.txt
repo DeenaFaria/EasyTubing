@@ -1,0 +1,21 @@
+def fetch_community_posts(channel_id, api_key):
+    youtube = build('youtube', 'v3', developerKey=api_key)
+    request = youtube.channels().list(
+        part='snippet',
+        id=channel_id
+    )
+    response = request.execute()
+    if 'items' in response:
+        return response['items'][0]['snippet']['communityPosts']['googlePlusUserId']
+    return None
+
+
+
+
+def fetch_community_posts_view(request):
+    api_key = 'AIzaSyADoVNJ667IDyY0ac8Q7fX-PQ2mKdRTsb0'
+    channel_id = request.GET.get('channel_id')
+
+    community_posts_data = fetch_community_posts(channel_id, api_key)
+
+    return render(request, 'Community_post.html', {'community_posts_data': community_posts_data})

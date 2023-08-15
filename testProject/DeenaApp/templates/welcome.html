@@ -1,14 +1,21 @@
 <!-- DeenaApp/templates/myapp/youtube_search.html -->
+
+{% extends 'base.html' %}
+{% load static %}
 <!DOCTYPE html>
 <html>
+{% block content %}
+<center>
 <head>
-    <title>YouTube Channel Search</title>
-	<ul>
-	<a href="{% url 'Search_By_Year' %}">Search by year</a>
-	
-	</ul>
+    <title>	EasyTube</title>
+
 </head>
 <body>
+<div class="container-fluid py-5">
+
+<div>
+ <img src="{% static 'img/Logo.png' %}" alt="Logo"  style="width: 200px; height: 200px;">
+</div>
     <h1>Search YouTube Channel</h1>
 <!-- myapp/templates/myapp/youtube_search.html -->
 <form method="get" action="{% url 'youtube_search' %}">
@@ -16,7 +23,26 @@
     <input type="text" name="query" placeholder="Enter Search Query">
     <input type="submit" value="Search">
 </form>
+</div>
+
+<div>
+	<a href="{% url 'Search_By_Year' %}">Search by year</a>
+</div>
+
+<div class="mt-5">
+
+<p class="text-success"> Not finding your desired channel? Try using the handle!</p>
+</div>
+
+<div>
+<h3><a href="mailto:deenafaria@gmail.com"><img src="{% static 'img/gmail.png' %}" alt="gmail"  style="width: 30px; height: 25px;"></a> Contact Me!</h3>
+<br>
+
+<h5><img src="{% static 'img/Copyright.png' %}" alt="Copyright"  style="width: 30px; height: 25px;">Deena Faria</h5>
+</div>
 
 </body>
+</center>
+{% endblock %}
 </html>
 

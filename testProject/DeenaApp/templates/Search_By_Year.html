@@ -1,23 +1,30 @@
 <!-- DeenaApp/templates/youtube_search_year.html -->
+{% extends 'base.html' %}
 <!DOCTYPE html>
 <html>
+
+{% block content %}
+<center>
 <head>
     <title>YouTube Video Search by Year</title>
 	
 </head>
 <body>
-    <h1>Search YouTube Videos by Year</h1>
+<div class="container-fluid py-5">
+    <h1>Search YouTube Channel</h1><br><br>
+    <h3>Search YouTube Videos by Year</h3><br>
 
     <form method="get" action="{% url 'Search_By_Year' %}">
         <label for="channel_id">Channel ID:</label>
         <input type="text" id="channel_id" name="channel_id" required>
-        <br>
+        
         <label for="year">Year:</label>
-        <input type="number" id="year" name="year" min="2005" max="{{ 2023 }}" required>
-        <br>
+        <input type="number" id="year" name="year" min="2005" required>
+        <br><br>
         <input type="submit" value="Search">
     </form>
-
+</center>
+<div class="m-3 pl-4">
     {% if videos %}
     <h2>Videos from {{ year }} </h2>
     <ul>
@@ -28,5 +35,18 @@
         {% endfor %}
     </ul>
     {% endif %}
+	</div>
+	</div>
+	<script>
+  // Get the current year
+  const currentYear = new Date().getFullYear();
+  
+  // Find the input element by its ID and set its max attribute
+  const yearInput = document.getElementById("year");
+  yearInput.setAttribute("max", currentYear);
+</script>
 </body>
+
+{% endblock %}
+
 </html>
